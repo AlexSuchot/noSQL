@@ -45,3 +45,6 @@ db.sports.updateOne(
 
   // Increment 10 players :
   db.sports.updateMany({"requireTeams": true}, { $inc: { numberOfPlayers: 10}}, { upsert: true } );
+
+  // Check for titulaire :
+  db.sports.updateMany({"requireTeams": true}, { $addToSet: {"player": "isCaptain"}});
